@@ -1,16 +1,18 @@
-package service;
+package com.example.migration_test.service;
 
-import model.Car;
+import lombok.RequiredArgsConstructor;
+import com.example.migration_test.model.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.CarRepository;
+import com.example.migration_test.repository.CarRepository;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class CarService {
     @Autowired
-    private CarRepository carRepository;
+    private final CarRepository carRepository;
 
     public void printAllCars() {
         List<Car> cars = carRepository.findAll();

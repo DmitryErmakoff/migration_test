@@ -1,6 +1,6 @@
-package repository;
+package com.example.migration_test.repository;
 
-import model.Car;
+import com.example.migration_test.model.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
