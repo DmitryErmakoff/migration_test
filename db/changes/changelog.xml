@@ -1,0 +1,34 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd" objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS" logicalFilePath="./changes/changelog-nsi2.xml">
+    <changeSet id="create_table_car" author="dmitry">
+        <createTable tableName="car">
+            <column name="id_car" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="color" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount_force" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="insert_data_into_car" author="dmitry">
+        <sql>
+            INSERT INTO car (id_car, name, color, amount_force) VALUES (1, 'Toyota', 'Red', 200);
+        </sql>
+    </changeSet>
+    <changeSet id="insert_data_into_car2" author="dmitry">
+        <sql>
+            INSERT INTO car (id_car, name, color, amount_force) VALUES (2, 'Honda', 'Blue', 180);
+        </sql>
+    </changeSet>
+    <changeSet id="insert_data_into_car3" author="dmitry">
+        <sql>
+            INSERT INTO car (id_car, name, color, amount_force) VALUES (3, 'Ford', 'Green', 220);
+        </sql>
+    </changeSet>
+</databaseChangeLog>
